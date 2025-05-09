@@ -1,2 +1,3 @@
 "use strict";
-console.log("hello")
+let valueSearch = document.getElementById("valueSearch");
+let city = document.getElementById("city");

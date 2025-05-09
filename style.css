@@ -1,23 +1,64 @@
 @import "tailwindcss";
 /* styling the body element */
 .body-style{
-@apply min-h-screen flex justify-center items-center bg-linear-to-br from-purple-300 to-violet-900 font-mono;
+@apply min-h-screen flex justify-center items-center bg-linear-to-br from-purple-300 to-violet-900;
 }
 /* styling the main element */
 .main-style{
-   @apply  w-[400px] max-h-max min-h-[500px] bg-gray-50 rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
+   @apply  w-[400px] max-h-max min-h-[500px] bg-gray-50/30  rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
 }
 
 /* styling form input */
 .form-style{
     @apply border-2 bg-white  border-t-purple-300 border-b-violet-700 border-l-purple-300 border-r-violet-700 rounded-full flex justify-between hover:shadow-md hover:shadow-gray-700/50;
 }
+/* text-box */
 .text-box{
     @apply w-full p-2 focus:outline-none ;
 }
+/* search button */
 .search-btn{
     @apply p-2;
 }
+/* search icon */
 .btn-icon{
     @apply  opacity-50 hover:opacity-90 hover:text-violet-500;
+}
+
+/* form result */
+.result{
+    @apply pt-5 text-center;
+}
+.name{
+    @apply font-bold text-xl flex justify-center items-center gap-5;
+}
+.flag{
+    @apply w-[50px] h-[50px];
+}
+.title{
+    @apply font-semibold text-lg text-purple-800;
+}
+.temperature-img{
+    @apply w-[100px] mx-auto drop-shadow-lg drop-shadow-black/30;
+}
+.temperature-text{
+    @apply text-3xl text-violet-900;
+}
+.description{
+    @apply mb-5;
+}
+.weather-list{
+    @apply  grid grid-cols-3 gap-2.5;
+}
+.current-forcast{
+    @apply  text-xs w-auto px-2 py-3 mb-5 text-white bg-linear-to-br from-purple-300/50 to-violet-900/50 rounded-2xl;
+}
+.prev{
+    @apply text-lg font-bold mb-3 text-indigo-900;
+}
+.icon-sm{
+    @apply h-[70px] w-[70px];
+}
+.upcoming-forcast{
+  @apply text-sm px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50;
 }
