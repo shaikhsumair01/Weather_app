@@ -1,0 +1,23 @@
+@import "tailwindcss";
+/* styling the body element */
+.body-style{
+@apply min-h-screen flex justify-center items-center bg-linear-to-br from-purple-300 to-violet-900 font-mono;
+}
+/* styling the main element */
+.main-style{
+   @apply  w-[400px] max-h-max min-h-[500px] bg-gray-50 rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
+}
+
+/* styling form input */
+.form-style{
+    @apply border-2 bg-white  border-t-purple-300 border-b-violet-700 border-l-purple-300 border-r-violet-700 rounded-full flex justify-between hover:shadow-md hover:shadow-gray-700/50;
+}
+.text-box{
+    @apply w-full p-2 focus:outline-none ;
+}
+.search-btn{
+    @apply p-2;
+}
+.btn-icon{
+    @apply  opacity-50 hover:opacity-90 hover:text-violet-500;
+}
