@@ -11,58 +11,72 @@
 </head>
 <!-- body -->
 <body class="body-style">
-    <main class="main-style">
+    <main class="main-style" id="main">
         <!-- Adding Form  -->
-        <form action ="" class=" form-style">
+        <form action ="" class=" form-style" id="form">
+            <!-- Search bar -->
             <input type="text" autocomplete="off" class="text-box" id = "valueSearch">
+            <!-- Search button -->
             <button class="search-btn"><i class="fa-brands fa-searchengin text-2xl btn-icon"></i></button>
         </form>
+        <!-- section where the result will be displayed  -->
         <section class="result">
+            <!-- city name and flag -->
             <figure class="name">
                 <figurecaption id="city">Mumbai</figurecaption>
-                <img src="https://flagsapi.com/IN/shiny/64.png" class="flag">
+                <img src="https://flagsapi.com/IN/shiny/64.png" class="flag" id="flag">
             </figure>
+
+            <p class="title">Today's Forcast</p>
+            <!-- the current temperature and temperature logo -->
             <figure class="temperature">
-                <p class="title">Today's Forcast</p>
-                <img src=" https://openweathermap.org/img/wn/10d@2x.png" alt="current weather" class="temperature-img">
-                <figurecaption class="temperature-text">
+                <img src=" https://openweathermap.org/img/wn/10d@2x.png" alt="current weather" class="temperature-img" id="temperature-img">
+                <figurecaption class="temperature-text" id="current-temperature">
                 <span>31
                 <sup>o</sup>C
                 </span>
                 </figurecaption>
             </figure>
-            <p class="description">
+            <!-- weather details -->
+            <p class="description" id="current-description">
                 Overcast clouds
             </p>
             <ul class="weather-list">
+                <!-- clouds - today -->
                 <li class="current-forcast">
                     <span>Clouds</span>
                     <i class="fa-solid fa-cloud"></i>
-                    <span>98</span>%
+                    <span id="current-clouds">98</span>%
                 </li>
+                <!-- Humidity - today -->
                  <li class="current-forcast">
                     <span>Humidity</span>
                     <i class="fa-solid fa-droplet"></i>
-                    <span>55</span>%
+                    <span id="current-humidity">55</span>%
                 </li>
+                <!-- Air pressure - today -->
                  <li class="current-forcast">
                     <span>Pressure</span>
                     <i class="fa-solid fa-gauge"></i>
-                    <span>1001</span>hPa
+                    <span id="current-pressure">1001</span>hPa
                 </li>
             </ul>
+            <!-- upcoming forcast (previewing upcoming forcast) -->
             <p class="prev">Upcoming Forecast</p>
             <ul class="weather-list">
+                <!-- Tomorrow's forcast -->
                 <li class="upcoming-forcast">
                     <p>(10/5/2025)</p>
                     <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">
                     <p>Temp:<span>30<sup>o</sup>C</span></p>
                 </li>
+                <!-- day after tomorrow's forcast -->
                  <li class="upcoming-forcast">
                     <p>(11/5/2025)</p>
                     <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">
                     <p>Temp:<span>30<sup>o</sup>C</span></p>
                 </li>
+                <!-- Forcast 2 days later -->
                  <li class="upcoming-forcast">
                     <p>(12/5/2025)</p>
                     <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">

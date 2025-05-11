@@ -3,62 +3,99 @@
 .body-style{
 @apply min-h-screen flex justify-center items-center bg-linear-to-br from-purple-300 to-violet-900;
 }
-/* styling the main element */
+/* styling the main content element */
 .main-style{
    @apply  w-[400px] max-h-max min-h-[500px] bg-gray-50/30  rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
 }
 
-/* styling form input */
+/* styling form input (on submit it will take the location from the user inputs and return the weather) */
 .form-style{
     @apply border-2 bg-white  border-t-purple-300 border-b-violet-700 border-l-purple-300 border-r-violet-700 rounded-full flex justify-between hover:shadow-md hover:shadow-gray-700/50;
 }
-/* text-box */
+/* text-box (used for receiving the location input)*/
 .text-box{
-    @apply w-full p-2 focus:outline-none ;
+    @apply w-full px-5 focus:outline-none ;
 }
-/* search button */
+/* search button (for searching the location)*/
 .search-btn{
     @apply p-2;
 }
-/* search icon */
+/* search icon (icon inside the search button)*/
 .btn-icon{
     @apply  opacity-50 hover:opacity-90 hover:text-violet-500;
 }
 
-/* form result */
+/* form result (which displays the forcast)*/
 .result{
     @apply pt-5 text-center;
 }
+/* city name */
 .name{
     @apply font-bold text-xl flex justify-center items-center gap-5;
 }
+/* country flag */
 .flag{
     @apply w-[50px] h-[50px];
 }
+/* descriptive title */
 .title{
     @apply font-semibold text-lg text-purple-800;
 }
+/* image describing the temperature */
 .temperature-img{
     @apply w-[100px] mx-auto drop-shadow-lg drop-shadow-black/30;
 }
+/* shows the current temperature */
 .temperature-text{
     @apply text-3xl text-violet-900;
 }
+/* descriptive text about current condition */
 .description{
     @apply mb-5;
 }
+/* list containing the list of information about current weather (like air pressure, clouds and humidity)*/
 .weather-list{
     @apply  grid grid-cols-3 gap-2.5;
 }
+/* used to style the current forcast */
 .current-forcast{
     @apply  text-xs w-auto px-2 py-3 mb-5 text-white bg-linear-to-br from-purple-300/50 to-violet-900/50 rounded-2xl;
 }
+/* used to style upcoming forcast (previewing upcoming forcast)*/
 .prev{
     @apply text-lg font-bold mb-3 text-indigo-900;
 }
+/* upcoming forcast logo images */
 .icon-sm{
     @apply h-[70px] w-[70px];
 }
+/*upcoming weather*/
 .upcoming-forcast{
   @apply text-sm px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50;
+}
+
+/* error class */
+.error{
+    @apply animate-shake;
+
+}
+@theme {
+  --animate-shake: shake 0.3s linear 1;
+  @keyframes shake {
+    0%{
+     transform: translate(10px, 5px);
+    }
+    25% {
+      transform: translate(-5px,0);
+    }
+    50% {
+       transform: translate(8px,2px);
+    }
+    75%{
+         transform: translate(-2px,5px);
+    }
+    100%{
+         transform: translate(0,0);
+    }
+  }
 }
