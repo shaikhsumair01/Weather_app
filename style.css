@@ -43,7 +43,7 @@
 }
 /* image describing the temperature */
 .temperature-img{
-    @apply w-[100px] mx-auto drop-shadow-lg drop-shadow-black/30;
+    @apply w-[100px] mx-auto drop-shadow-lg drop-shadow-white/30;
 }
 /* shows the current temperature */
 .temperature-text{
@@ -71,7 +71,7 @@
 }
 /*upcoming weather*/
 .upcoming-forcast{
-  @apply text-sm px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50;
+  @apply text-sm px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50 hover:scale-110;
 }
 
 /* error class */

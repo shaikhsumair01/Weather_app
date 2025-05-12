@@ -7,7 +7,9 @@
     <!-- links -->
      <link href="./output.css" rel="stylesheet">
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel ="stylesheet">
-    <title>Weather app</title>
+    <!-- favicon -->
+     <link rel="icon" type="image/png" href=" https://openweathermap.org/img/wn/10d@2x.png">
+     <title>Weather app</title>
 </head>
 <!-- body -->
 <body class="body-style">
@@ -30,7 +32,7 @@
             <p class="title">Today's Forcast</p>
             <!-- the current temperature and temperature logo -->
             <figure class="temperature">
-                <img src=" https://openweathermap.org/img/wn/10d@2x.png" alt="current weather" class="temperature-img" id="temperature-img">
+                <img src=" //cdn.weatherapi.com/weather/64x64/night/386.png" alt="current weather" class="temperature-img" id="temperature-img">
                 <figurecaption class="temperature-text" id="current-temperature">
                 <span>31
                 <sup>o</sup>C
@@ -56,9 +58,9 @@
                 </li>
                 <!-- Air pressure - today -->
                  <li class="current-forcast">
-                    <span>Pressure</span>
+                    <span>Wind Speed</span>
                     <i class="fa-solid fa-gauge"></i>
-                    <span id="current-pressure">1001</span>hPa
+                    <span id="current-WindSpeed">4.63</span>Km/h
                 </li>
             </ul>
             <!-- upcoming forcast (previewing upcoming forcast) -->
@@ -66,21 +68,21 @@
             <ul class="weather-list">
                 <!-- Tomorrow's forcast -->
                 <li class="upcoming-forcast">
-                    <p>(10/5/2025)</p>
-                    <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">
-                    <p>Temp:<span>30<sup>o</sup>C</span></p>
+                    <p id="first_date">(10/5/2025)</p>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="first_image">
+                    <p>Temp:<span id="first_temp">30<sup>o</sup>C</span></p>
                 </li>
                 <!-- day after tomorrow's forcast -->
                  <li class="upcoming-forcast">
-                    <p>(11/5/2025)</p>
-                    <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">
-                    <p>Temp:<span>30<sup>o</sup>C</span></p>
+                    <p id="second_date">(11/5/2025)</p>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="second_image">
+                    <p>Temp:<span id="second_temp">30<sup>o</sup>C</span></p>
                 </li>
                 <!-- Forcast 2 days later -->
                  <li class="upcoming-forcast">
-                    <p>(12/5/2025)</p>
-                    <img src="https://openweathermap.org/img/wn/10d@2x.png" class="icon-sm">
-                    <p>Temp:<span>30<sup>o</sup>C</span></p>
+                    <p id="third_date">(12/5/2025)</p>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="third_image">
+                    <p>Temp:<span id="third_temp">30<sup>o</sup>C</span></p>
                 </li>
             </ul>
         </section>

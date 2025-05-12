@@ -9,7 +9,13 @@ let temperaturelogo = document.getElementById("temperature-img");
 let currentDescription = document.getElementById("current-description");
 let currentClouds = document.getElementById("current-clouds");
 let currentHumidity = document.getElementById("current-humidity");
-let currentPressure = document.getElementById("current-pressure");
+let currentWindSpeed = document.getElementById("current-WindSpeed");
+let first_date = document.getElementById("first_date") 
+let first_image = document.getElementById("first_image") 
+let first_temp = document.getElementById("first_temp") 
+let first_cloud = document.getElementById("first_cloud") 
+let first_humidity = document.getElementById("first_humidity") 
+let first_wind = document.getElementById("first_wind") 
 // creating and submitting a form
 let form = document.getElementById("form");
 
@@ -27,12 +33,13 @@ if (valueSearch.value!==" "){
 else{
     // addes the shake animation (error) if the input is not filled
     main.classList.add("error");
+    alert("Please enter a city name!");
     // removes the error class after 1 sec.
     setTimeout(()=> main.classList.remove("error"),1000); 
 }
 });
-let id = "6f3e281eb5562652befa7977e616287a";
-let url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=" + id;
+
+let url = `http://api.weatherapi.com/v1/forecast.json?key=7df05d21f7544cdfaa991117252004&days=7&aqi=no&alerts=no`;
 
 /* fetches the data based on the url mentioned above
 (fetches the weather information) and then converts it 
@@ -43,30 +50,58 @@ const searchWeather = ()=>{
     .then((Response)=> Response.json() // converting it into json
     .then((data)=>{ 
         console.log(data);
-        if (data.cod == 200){ // if the city is found (since cod==200)
-            city.textContent = data.name;
+        if (!data == " "){ // if the city is found (since data is not empty)
+            city.textContent = data.location.name;
             // changing the flag image based on user input
-            flag.setAttribute("src", `https://flagsapi.com/${data.sys.country}/shiny/64.png`)
+            // flag.setAttribute("src", `https://flagsapi.com/${data.sys.country}/shiny/64.png`)
             
             // Changing the temperature logo based on the location provided
-            temperaturelogo.setAttribute("src", ` https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+            temperaturelogo.setAttribute("src", data.current.condition.icon)
 
-            /* Converting temperature in Kelvin(which is the default value we get from the API) to degree celsius*/
-            const temperatureInDegree = Math.round((Number(data.main.temp) -273.15)) 
+            // setting temperature in celsius
+            const temperatureInDegree = data.current.temp_c 
             // setting the temperature value
             currentTemperature.innerHTML = `<span>${temperatureInDegree}<sup>o</sup>C</span>`
             // setting the description
-            currentDescription.textContent = data.weather[0].description
+            currentDescription.textContent = data.current.condition.text
+            // setting current cloud details
+            currentClouds.textContent = data.current.cloud;
+            // setting humidity
+            currentHumidity.textContent = data.current.humidity;
+            // setting windspeed
+            currentWindSpeed.textContent = data.current.wind_kph;
+
+            // setting upcoming forecast
+            const forecastday =  data.forecast.forecastday;
+            // tomorrow's forecast
+            first_date.textContent = forecastday[0].date;
+            first_image.setAttribute("src" , forecastday[0].day.condition.icon);
+            first_temp.innerHTML = `<span>${forecastday[0].day.avgtemp_c}<sup>o</sup>C</span>`;
             
-            currentClouds.textContent = data.clouds.all;
-            currentHumidity.textContent = data.main.humidity;
-            currentPressure.textContent = data.main.pressure;
+            // day after tomorrow's forecast
+            second_date.textContent = forecastday[1].date;
+            second_image.setAttribute("src" , forecastday[1].day.condition.icon);
+            second_temp.innerHTML = `<span>${forecastday[1].day.avgtemp_c}<sup>o</sup>C</span>`;
+            
+            // third day's forecast
+            third_date.textContent = forecastday[2].date;
+            third_image.setAttribute("src" , forecastday[2].day.condition.icon);
+            third_temp.innerHTML = `<span>${forecastday[2].day.avgtemp_c}<sup>o</sup>C</span>`;
         }
         else{
             main.classList.add("error");
+            alert("The city provided does not exist!")
             setTimeout(()=> main.classList.remove("error"),1000);
         }
         // clearing out the input
         valueSearch.value = " ";
-    } ))
+    } )).catch((error)=>{ 
+        console.error("Error fetching data:", error);
+        alert("Cannot get the details")})
 };
+// default value
+const initApp = () =>{
+    valueSearch.value = "Mumbai";
+    searchWeather();
+}
+initApp()
