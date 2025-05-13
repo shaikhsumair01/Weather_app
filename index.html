@@ -15,20 +15,28 @@
 <body class="body-style">
     <main class="main-style" id="main">
         <!-- Adding Form  -->
+        <header class="header"> 
         <form action ="" class=" form-style" id="form">
             <!-- Search bar -->
             <input type="text" autocomplete="off" class="text-box" id = "valueSearch">
             <!-- Search button -->
-            <button class="search-btn"><i class="fa-brands fa-searchengin text-2xl btn-icon"></i></button>
+            <button class="search-btn"><i class="fa-brands fa-searchengin btn-icon"></i></button>
         </form>
+        <!-- location button -->
+        <button class="location-btn"><i class="fa-solid fa-location-crosshairs btn-icon"></i></button>
+        <!-- dropdown -->
+        <div class="dropdown">
+            <!-- filled on user input -->
+        <ul class="dropdown-list">
+           
+        </ul>
+        </div>
+    </header>
+
         <!-- section where the result will be displayed  -->
         <section class="result">
             <!-- city name and flag -->
-            <figure class="name">
-                <figurecaption id="city">Mumbai</figurecaption>
-                <img src="https://flagsapi.com/IN/shiny/64.png" class="flag" id="flag">
-            </figure>
-
+            <p class="name" id="city">Mumbai</p>
             <p class="title">Today's Forcast</p>
             <!-- the current temperature and temperature logo -->
             <figure class="temperature">
@@ -71,18 +79,37 @@
                     <p id="first_date">(10/5/2025)</p>
                     <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="first_image">
                     <p>Temp:<span id="first_temp">30<sup>o</sup>C</span></p>
+                     <span>Wind</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="first_wind">4.63</span>Km/h
+                      <span>Humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="first_humidity">55</span>%
                 </li>
+                
                 <!-- day after tomorrow's forcast -->
                  <li class="upcoming-forcast">
                     <p id="second_date">(11/5/2025)</p>
                     <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="second_image">
                     <p>Temp:<span id="second_temp">30<sup>o</sup>C</span></p>
+                      <span>Wind</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="second_wind">4.63</span>Km/h
+                      <span>Humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="second_humidity">55</span>%
                 </li>
                 <!-- Forcast 2 days later -->
                  <li class="upcoming-forcast">
                     <p id="third_date">(12/5/2025)</p>
                     <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" class="icon-sm" id="third_image">
                     <p>Temp:<span id="third_temp">30<sup>o</sup>C</span></p>
+                      <span>Wind</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="third_wind">4.63</span>Km/h
+                      <span>Humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="third_humidity">55</span>%
                 </li>
             </ul>
         </section>

@@ -7,10 +7,21 @@
 .main-style{
    @apply  w-[400px] max-h-max min-h-[500px] bg-gray-50/30  rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
 }
-
+/* styling the from container */
+.header{
+ @apply relative flex justify-center gap-2;
+}
+/* styling dropdown */
+.dropdown{
+    @apply hidden z-10 absolute left-3 top-9 translate-y-3 translate-x-4 bg-white w-[75%] rounded-lg;
+}
+/* styling dropdown list items which will be appended in through user input */
+.dropdown-item{
+   @apply py-1 text-center cursor-default text-base text-purple-900 font-semibold;
+}
 /* styling form input (on submit it will take the location from the user inputs and return the weather) */
 .form-style{
-    @apply border-2 bg-white  border-t-purple-300 border-b-violet-700 border-l-purple-300 border-r-violet-700 rounded-full flex justify-between hover:shadow-md hover:shadow-gray-700/50;
+    @apply flex justify-between border-2 bg-white  border-t-purple-300 border-b-violet-700 border-l-purple-300 border-r-violet-700 rounded-full  hover:shadow-md hover:shadow-gray-700/50;
 }
 /* text-box (used for receiving the location input)*/
 .text-box{
@@ -22,7 +33,7 @@
 }
 /* search icon (icon inside the search button)*/
 .btn-icon{
-    @apply  opacity-50 hover:opacity-90 hover:text-violet-500;
+    @apply text-2xl opacity-50 hover:opacity-90 hover:text-violet-500;
 }
 
 /* form result (which displays the forcast)*/
@@ -33,17 +44,15 @@
 .name{
     @apply font-bold text-xl flex justify-center items-center gap-5;
 }
-/* country flag */
-.flag{
-    @apply w-[50px] h-[50px];
-}
+
+
 /* descriptive title */
 .title{
     @apply font-semibold text-lg text-purple-800;
 }
 /* image describing the temperature */
 .temperature-img{
-    @apply w-[100px] mx-auto drop-shadow-lg drop-shadow-white/30;
+    @apply w-[80px] h-[80px] mx-auto drop-shadow-lg drop-shadow-white/30;
 }
 /* shows the current temperature */
 .temperature-text{
@@ -59,7 +68,7 @@
 }
 /* used to style the current forcast */
 .current-forcast{
-    @apply  text-xs w-auto px-2 py-3 mb-5 text-white bg-linear-to-br from-purple-300/50 to-violet-900/50 rounded-2xl;
+    @apply  text-sm w-auto px-2 py-3 mb-5 text-white bg-linear-to-br from-purple-300/50 to-violet-900/50 rounded-2xl;
 }
 /* used to style upcoming forcast (previewing upcoming forcast)*/
 .prev{
@@ -71,7 +80,7 @@
 }
 /*upcoming weather*/
 .upcoming-forcast{
-  @apply text-sm px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50 hover:scale-110;
+  @apply text-xs px-2 py-2 bg-linear-to-b font-medium rounded-lg text-white from-indigo-900/50 to-purple-300/50 shadow-2xl shadow-black/70 hover:scale-110;
 }
 
 /* error class */
@@ -79,6 +88,7 @@
     @apply animate-shake;
 
 }
+/* error class animation */
 @theme {
   --animate-shake: shake 0.3s linear 1;
   @keyframes shake {
