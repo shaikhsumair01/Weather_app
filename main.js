@@ -92,7 +92,7 @@ else{
 });
 
 // Api key
-let url = `http://api.weatherapi.com/v1/forecast.json?key=7df05d21f7544cdfaa991117252004&days=7&aqi=no&alerts=no`;
+let url = `https://api.weatherapi.com/v1/forecast.json?key=7df05d21f7544cdfaa991117252004&days=7&aqi=no&alerts=no`;
 
 
 /* The following function fetches the data based on the url mentioned above (api key)
@@ -106,10 +106,11 @@ const searchWeather = async ()=>{
         if (data && data.location){ // if the city is found (since data is not empty(user has entered an input))
             displayWeather(data) // sends data to displayWeather function
             // storing the city names in dropdown
-           if (!cityNamesList.includes(valueSearch.value.trim().toLowerCase())){ // checks if the citynames exist in the cityNamesList array
-                cityNamesList.push(valueSearch.value.trim()); // If not then it pushes the value in the array
-                sessionStorage.setItem("cityNamesList", JSON.stringify(cityNamesList)); // stores the values in sessionStorage
-            }
+         if (!cityNamesList.includes(valueSearch.value.trim().toLowerCase()) && valueSearch.value.trim().toLowerCase() !== "mumbai") {
+            cityNamesList.push(valueSearch.value.trim());
+            console.log(cityNamesList);
+            sessionStorage.setItem("cityNamesList", JSON.stringify(cityNamesList));
+        }
 
                // clearing out the input
         valueSearch.value = " ";
@@ -185,7 +186,7 @@ userlocation.addEventListener("click", function(){
 // This function takes latitude and longitude from the geolocation and then uses weatherapi to fetch the details of the provided lat and lon.
 const getWeatherbyCurrentLocation = async(lat,lon) =>{
     try{
-         const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7df05d21f7544cdfaa991117252004&q=${lat},${lon}&days=7&aqi=no&alerts=no`);
+         const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7df05d21f7544cdfaa991117252004&q=${lat},${lon}&days=7&aqi=no&alerts=no`);
         const data = await response.json();
         
         displayWeather(data); // sending the data to displayWeather
