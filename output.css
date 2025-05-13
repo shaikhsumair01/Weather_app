@@ -214,7 +214,7 @@
 .main-style {
   box-sizing: border-box;
   max-height: max-content;
-  min-height: 500px;
+  min-height: 600px;
   width: 400px;
   border-radius: var(--radius-4xl);
   background-color: color-mix(in srgb, oklch(98.5% 0.002 247.839) 30%, transparent);

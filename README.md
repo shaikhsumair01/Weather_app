@@ -11,3 +11,8 @@ If you are unable to access the styles and want to see the applied styles then a
 copy paste this in the terminal when you run the code in order to see the styles applied
 npx @tailwindcss/cli -i ./style.css -o ./output.css --watch
 
+Github link:
+https://github.com/shaikhsumair01/Weather_app
+
+Live link:
+https://shaikhsumair01.github.io/Weather_app/
