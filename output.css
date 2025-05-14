@@ -213,9 +213,6 @@
 }
 .main-style {
   box-sizing: border-box;
-  max-height: max-content;
-  min-height: 600px;
-  width: 400px;
   border-radius: var(--radius-4xl);
   background-color: color-mix(in srgb, oklch(98.5% 0.002 247.839) 30%, transparent);
   @supports (color: color-mix(in lab, red, red)) {
@@ -227,6 +224,21 @@
   --tw-shadow-color: oklch(27.8% 0.033 256.848);
   @supports (color: color-mix(in lab, red, red)) {
     --tw-shadow-color: color-mix(in oklab, var(--color-gray-800) var(--tw-shadow-alpha), transparent);
+  }
+  @media (width >= 40rem) {
+    height: 100%;
+  }
+  @media (width >= 40rem) {
+    width: 100%;
+  }
+  @media (width >= 48rem) {
+    max-height: max-content;
+  }
+  @media (width >= 48rem) {
+    min-height: 600px;
+  }
+  @media (width >= 48rem) {
+    width: 400px;
   }
 }
 .header {
