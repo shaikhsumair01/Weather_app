@@ -5,7 +5,7 @@
 }
 /* styling the main content element */
 .main-style{
-   @apply  md:w-[400px] md:max-h-max md:min-h-[600px] sm:h-full sm:w-full bg-gray-50/30  rounded-4xl shadow-lg shadow-gray-800 p-7 box-border;
+   @apply  md:w-[400px]  h-full w-full bg-gray-50/30 rounded-none md:rounded-4xl shadow-lg shadow-gray-800 p-5 md:p-7 box-border;
 }
 /* styling the from container */
 .header{

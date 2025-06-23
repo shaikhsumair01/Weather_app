@@ -79,7 +79,7 @@ form.addEventListener("submit", (event)=>
 {
 event.preventDefault() // prevents the reloading of the webpage on click
 // checks if the user input is not empty. If not then calls the searchWeather()
-if (valueSearch.value!==" "){
+if (valueSearch.value!==""){
     searchWeather();
 }
 else{
@@ -113,7 +113,7 @@ const searchWeather = async ()=>{
         }
 
                // clearing out the input
-        valueSearch.value = " ";
+        valueSearch.value = "";
         }
         // sends an alert if the user has entered invalid output
         else{
